@@ -3,13 +3,6 @@ import { Map, TileLayer, ZoomControl, Polygon } from 'react-leaflet';
 import AllMarkers from '../containers/AllMarkers'
 
 class LeafletMap extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    };
-  }
-  
   getCenterCoords() {
     if (this.props.locations.length > 3) {
       let location = this.props.locations.slice(-1)[0];
@@ -20,10 +13,7 @@ class LeafletMap extends Component {
   }
   
   render() {
-    const polygon = [
-    [39.750809, -104.996810], [34.052235, -118.243683], [42.364506, -71.03887]
-  ]
-  
+    let { polygonCoords } = this.props
     return (
       <div className="map-container">
         <Map
@@ -43,7 +33,7 @@ class LeafletMap extends Component {
             position="bottomright"
           />
           <AllMarkers />
-          <Polygon positions={this.props.polygonCoords} />
+          <Polygon positions={polygonCoords} />
         </Map>
       </div>
     );
