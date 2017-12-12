@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 
 
 class Form extends Component {
+
   submitForm(e, data) {
     let validData = this.validateData(data)
     e.preventDefault();
     if (validData) {
       this.props.saveLocation(data);
     }
+    this.clearInputs()
+  }
+  
+  clearInputs() {
+    this.name.value = "";
+    this.lat.value = "";
+    this.lng.value = "";
   }
   
   validateData(data) {
