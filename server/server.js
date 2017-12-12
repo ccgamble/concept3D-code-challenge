@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 app.post('/locations', (request, response) => {
   let id = app.locals.idIndex += 1;
   const location = request.body
-  const addedLocation = Object.assign({}, {id: id}, location)
+  const addedLocation = Object.assign({}, {id: `id${id}`}, location)
 
   initialLocations.push(addedLocation)
   return response.status(201).json(addedLocation);
