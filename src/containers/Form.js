@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    saveLocation: (location) => {
+    onSaveLocation: (location) => {
       dispatch({
         type: 'SAVE_LOCATION',
         data: location,
