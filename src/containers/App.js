@@ -16,6 +16,12 @@ const mapDispatchToProps = (dispatch) => {
     fetchAllLocations: (coords) => {
       dispatch(actions.fetchAllLocations(coords));
     },
+    setPointerCoords: (coords) => {
+      dispatch(actions.setPointerCoords(coords));
+    },
+    setCurrentCoords: (coords) => {
+      dispatch(actions.setCurrentCoords(coords));
+    },
   };
 };
 

@@ -13,7 +13,7 @@ class LeafletMap extends Component {
   }
   
   render() {
-    let { polygonCoords } = this.props
+    let { polygonCoords, setPointerCoords, setCurrentCoords } = this.props
     return (
       <div className="map-container">
         <Map
@@ -22,6 +22,8 @@ class LeafletMap extends Component {
           center={this.getCenterCoords()}
           zoom={4}
           maxBounds={[[85, 100], [-85, -280]]}
+          onMouseMove={(e) => setPointerCoords(e.latlng)}
+          onClick={(e) => setCurrentCoords(e.latlng)}
         >
           <TileLayer
             url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"

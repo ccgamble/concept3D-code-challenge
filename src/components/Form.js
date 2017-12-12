@@ -38,7 +38,15 @@ class Form extends Component {
       return data
     }
   }
+  
   render() {
+    let { currentCoords, pointerCoords } = this.props
+    let pointerLat = (pointerCoords.lat) ? Number(pointerCoords.lat).toFixed(6) : ''
+    let pointerLng = (pointerCoords.lng) ? Number(pointerCoords.lng).toFixed(6) : ''
+    let currentLat = (currentCoords.lat) ? Number(currentCoords.lat).toFixed(6) : ''
+    let currentLng = (currentCoords.lng) ? Number(currentCoords.lng).toFixed(6) : ''
+    
+  
     return (
       <form className="form">
         <label>
@@ -53,13 +61,16 @@ class Form extends Component {
           <input
             ref={(input) => { this.lat = input }}
             type="text"
+            value = {currentLat}
           />
         </label>
         <label>
           Lon
           <input
             ref={(input) => { this.lng = input }}
-            type="text"/>
+            type="text"
+            value = {currentLng}
+            />
         </label>
         <button
           type="submit"
@@ -71,6 +82,14 @@ class Form extends Component {
         >
             Save
         </button>
+        <button onClick={()=>this.clearInputs()}>Clear Inputs</button>
+        <div className="coordinates-display">
+         <h3>Pointer Coordinates</h3>
+         <p>Latitutde: {pointerLat}</p>
+         <p>Longitude: {pointerLng}</p>
+         <p className="display-description">*Click on map to set form inputs to current coordinates</p>
+       </div>
+
       </form>
     );
   }
