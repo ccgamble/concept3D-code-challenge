@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, ZoomControl } from 'react-leaflet';
-import AllMarkers from './AllMarkers'
+import AllMarkers from '../containers/AllMarkers'
 
 class LeafletMap extends Component {
   constructor(props) {
