@@ -82,6 +82,7 @@ class Form extends Component {
         >
             Save
         </button>
+        <button onClick={()=>this.clearInputs()}>Clear Inputs</button>
         <div className="coordinates-display">
          <h3>Pointer Coordinates</h3>
          <p>Latitutde: {pointerLat}</p>
