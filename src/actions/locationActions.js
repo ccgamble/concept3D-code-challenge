@@ -28,13 +28,6 @@ const saveLocation = (location) => {
   };
 };
 
-const storeAllLocations = (locations) => {
-  return {
-    type: 'STORE_LOCATIONS',
-    data: locations,
-  };
-};
-
 const setCurrentCoords = (coords) => {
   return {
     type: 'SET_CURRENT_COORDS', 
@@ -55,6 +48,13 @@ const setPolygonCoords = (coords) => {
     coords: coords
   }
 }
+
+const storeAllLocations = (locations) => {
+  return {
+    type: 'STORE_LOCATIONS',
+    data: locations,
+  };
+};
 
 
 export { fetchAllLocations, saveLocation, setCurrentCoords, setPointerCoords, setPolygonCoords }

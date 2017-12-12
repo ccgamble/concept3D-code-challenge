@@ -4,8 +4,8 @@ import * as actions from '../actions/locationActions';
 
 const mapStateToProps = (state) => {
   return { 
-    pointerCoords: state.PointerCoords.coords,
-    currentCoords: state.CurrentCoords.coords
+    currentCoords: state.CurrentCoords.coords,
+    pointerCoords: state.PointerCoords.coords
    }
 }
 
