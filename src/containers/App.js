@@ -1,15 +1,22 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../style/App.css';
-import { fetchAllLocations } from '../actions/locationActions';
+import * as actions from '../actions/locationActions';
 import App from '../components/App';
 
 const mapStateToProps = (state) => {
-  return { locations: state.Locations.data };
+  return { 
+    locations: state.Locations.data,
+    polygonCoords: state.Polygon
+   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ fetchAllLocations }, dispatch);
+  return {
+    fetchAllLocations: (coords) => {
+      dispatch(actions.fetchAllLocations(coords));
+    },
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

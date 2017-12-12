@@ -25,6 +25,10 @@ Hello prospective candidate! In this repo, you're given a boilerplate that conta
 2. Now that you're adding your new markers and saving them, let's make some shapes! Using the Leaflet library, let's make a polygon out of our markers. Here's the user story:
 
   ```When I click on a marker, it's location will be used as a point for a polygon. Successive clicks will add markers to the polygon, and clicking a point will remove it from the polygon```
+  
+  - [x] Clicking on a marker creates a point for a polygon
+  - [x] Successive clicks add markers to the polygon
+  - [x] Clicking a polygon point will remove it from the polygon
 
   Here's an example in pictures:
 

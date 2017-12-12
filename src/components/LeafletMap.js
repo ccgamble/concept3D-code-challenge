@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, ZoomControl } from 'react-leaflet';
+import { Map, TileLayer, ZoomControl, Polygon } from 'react-leaflet';
 import AllMarkers from '../containers/AllMarkers'
 
 class LeafletMap extends Component {
@@ -20,6 +20,10 @@ class LeafletMap extends Component {
   }
   
   render() {
+    const polygon = [
+    [39.750809, -104.996810], [34.052235, -118.243683], [42.364506, -71.03887]
+  ]
+  
     return (
       <div className="map-container">
         <Map
@@ -39,6 +43,7 @@ class LeafletMap extends Component {
             position="bottomright"
           />
           <AllMarkers />
+          <Polygon positions={this.props.polygonCoords} />
         </Map>
       </div>
     );
