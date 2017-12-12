@@ -41,6 +41,15 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
+app.post('/locations', (request, response) => {
+  let id = app.locals.idIndex += 1;
+  const location = request.body
+  const addedLocation = Object.assign({}, {id: id}, location)
+
+  initialLocations.push(addedLocation)
+  return response.status(201).json(addedLocation);
+});
+
 const portNumber = process.env.PORT || 3001;
 
 app.listen(portNumber, () => {

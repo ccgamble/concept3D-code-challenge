@@ -6,7 +6,7 @@ class Form extends Component {
     let validData = this.validateData(data)
     e.preventDefault();
     if (validData) {
-      this.props.onSaveLocation(data);
+      this.props.saveLocation(data);
     }
   }
   
