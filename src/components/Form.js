@@ -3,8 +3,32 @@ import React, { Component } from 'react';
 
 class Form extends Component {
   submitForm(e, data) {
+    let validData = this.validateData(data)
     e.preventDefault();
-    this.props.saveLocation(data);
+    if (validData) {
+      this.props.saveLocation(data);
+    }
+  }
+  
+  validateData(data) {
+    if (!data.name) {
+      alert("Please enter a name for the location.")
+    } else {
+      var validName = true;
+    }
+    if( Number(data.lat) > 90 || Number(data.lat) < -90 || !data.lat ) {
+      alert("Please enter a valid latitude.")
+    } else {
+      var validLat = true;
+    }
+    if( Number(data.lng) > 180 || Number(data.lng) < -180 || !data.lng ) {
+      alert("Please enter a valid longitude.")
+    } else {
+      var validLng = true;
+    }
+    if (validName && validLat && validLng) {
+      return data
+    }
   }
   render() {
     return (

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import Form from '../components/Form'
+import * as actions from '../actions/locationActions';
 
 const mapStateToProps = (state) => {
   return {};
@@ -8,10 +9,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     saveLocation: (location) => {
-      dispatch({
-        type: 'SAVE_LOCATION',
-        data: location,
-      });
+      dispatch(actions.saveLocation(location));
     },
   };
 };
