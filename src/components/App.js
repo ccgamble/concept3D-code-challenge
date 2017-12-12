@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   render() {
-    let { locations, polygonCoords } = this.props
+    let { locations, polygonCoords, setCurrentCoords, setPointerCoords } = this.props
 
     return (
       <div className="App">
@@ -20,6 +20,8 @@ class App extends Component {
         <LeafletMap 
           locations={locations}
           polygonCoords={polygonCoords}
+          setPointerCoords={setPointerCoords}
+          setCurrentCoords={setCurrentCoords}
         />
       </div>
     );
