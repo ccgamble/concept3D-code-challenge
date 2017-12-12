@@ -20,7 +20,7 @@ Hello prospective candidate! In this repo, you're given a boilerplate that conta
   - [x] Markers must persist on refresh of the browser. It is not required to persist on the server side, but it'll be more impressive if it does.
   - [x] **Valid** latitude and longitude is important. How you want to verify that is up to you.
   - [x] Use Redux and Reducers to update the state of your app.
-  - Bonus: When adding a new marker, the center of the map will be set to the [lat, lng] of the new marker.
+  - [x] Bonus: When adding a new marker, the center of the map will be set to the [lat, lng] of the new marker.
 
 2. Now that you're adding your new markers and saving them, let's make some shapes! Using the Leaflet library, let's make a polygon out of our markers. Here's the user story:
 
