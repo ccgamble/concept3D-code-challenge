@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 
 
 class Form extends Component {
+  
+  componentDidUpdate(prevProps) {
+    if (prevProps.currentCoords !== this.props.currentCoords) {
+      this.setInputs(this.props.currentCoords)
+    }
+  }
+  
+  setInputs(coords) {
+    document.getElementById('latInput').value = Number(coords.lat).toFixed(6)
+    document.getElementById('lngInput').value = Number(coords.lng).toFixed(6)
+  }
 
   submitForm(e, data) {
     let validData = this.validateData(data)
@@ -43,10 +54,7 @@ class Form extends Component {
     let { currentCoords, pointerCoords } = this.props
     let pointerLat = (pointerCoords.lat) ? Number(pointerCoords.lat).toFixed(6) : ''
     let pointerLng = (pointerCoords.lng) ? Number(pointerCoords.lng).toFixed(6) : ''
-    let currentLat = (currentCoords.lat) ? Number(currentCoords.lat).toFixed(6) : ''
-    let currentLng = (currentCoords.lng) ? Number(currentCoords.lng).toFixed(6) : ''
     
-  
     return (
       <form className="form">
         <label>
@@ -59,17 +67,17 @@ class Form extends Component {
         <label>
           Lat
           <input
+            id="latInput"
             ref={(input) => { this.lat = input }}
             type="text"
-            value = {currentLat}
           />
         </label>
         <label>
           Lon
           <input
+            id="lngInput"
             ref={(input) => { this.lng = input }}
             type="text"
-            value = {currentLng}
             />
         </label>
         <button
