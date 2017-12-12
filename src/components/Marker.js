@@ -11,21 +11,21 @@ class MapMarker extends Component {
       iconSize: [15, 15]
     });
     
-    let { location, setPolygonCoords } = this.props
+    let { location, setPolygonCoords, name } = this.props
 
     return (
       <div className="marker-container">
           <Marker
-            position={this.props.location}
+            position={location}
             icon={icon}
-            onClick={() => this.props.setPolygonCoords(this.props.location)}
+            onClick={() => setPolygonCoords(location)}
           >
             <Tooltip
               sticky
               interactive
             >
               <div>
-                <h4>{this.props.name}</h4>
+                <h4>{name}</h4>
               </div>
             </Tooltip>
           </Marker>

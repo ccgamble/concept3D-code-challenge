@@ -12,11 +12,15 @@ class App extends Component {
   }
 
   render() {
+    let { locations, polygonCoords } = this.props
 
     return (
       <div className="App">
         <FormContainer />
-        <LeafletMap locations={this.props.locations} polygonCoords={this.props.polygonCoords}/>
+        <LeafletMap 
+          locations={locations}
+          polygonCoords={polygonCoords}
+        />
       </div>
     );
   }

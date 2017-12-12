@@ -5,13 +5,15 @@ import MapMarker from './Marker'
 
 class AllMarkers extends Component {
   render() {
-    const markerArray = this.props.locations.map((marker, i) => {
+    let { locations, setPolygonCoords } = this.props
+    
+    const markerArray = locations.map((marker, i) => {
       return (
         <MapMarker
           key={i}
           location={[+marker.lat, +marker.lng]}
           name={marker.name}
-          setPolygonCoords={this.props.setPolygonCoords}
+          setPolygonCoords={setPolygonCoords}
         />
       )
     })
