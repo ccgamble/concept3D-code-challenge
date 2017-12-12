@@ -83,10 +83,10 @@ class Form extends Component {
             Save
         </button>
         <div className="coordinates-display">
-         <p>Pointer Coordinates</p>
+         <h3>Pointer Coordinates</h3>
          <p>Latitutde: {pointerLat}</p>
          <p>Longitude: {pointerLng}</p>
-         <p>Click on map to set form inputs to current coordinates</p>
+         <p className="display-description">*Click on map to set form inputs to current coordinates</p>
        </div>
 
       </form>
