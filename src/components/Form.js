@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 
 class Form extends Component {
+  clearInputs() {
+    this.name.value = "";
+    this.lat.value = "";
+    this.lng.value = "";
+  }
   
   componentDidUpdate(prevProps) {
     if (prevProps.currentCoords !== this.props.currentCoords) {
@@ -21,12 +26,6 @@ class Form extends Component {
       this.props.saveLocation(data);
     }
     this.clearInputs()
-  }
-  
-  clearInputs() {
-    this.name.value = "";
-    this.lat.value = "";
-    this.lng.value = "";
   }
   
   validateData(data) {
