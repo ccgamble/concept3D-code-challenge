@@ -52,8 +52,8 @@ Hello prospective candidate! In this repo, you're given a boilerplate that conta
 
 3. BONUS TIME!
 
-  Add some other fun features with the React-Leaflet library. Be creative!
-  Use the Create-React-App Testing Library which is Jest to write some unit tests.
+  - [x] Adds the ability for the user to see the latitude and longitude of the pointer
+  - [x] Adds the ability for the user to click on a point on the map and have those coordinate values go into the form inputs
 
 ### Intructions
 
